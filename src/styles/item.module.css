@@ -106,20 +106,31 @@
 @media only screen and (max-width: 768px) {
     /* Ajuste para pantallas pequeñas, como móviles */
     .referenciaCard {
-        flex-direction: column;
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
+        margin: 0.5em; /* Reducir margen en pantallas pequeñas */
+    }
+}  
+
+@media only screen and (max-width: 768px) {
+    /* Ajuste para pantallas pequeñas, como móviles */
+    .referenciaCard {
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
         margin: 0.5em; /* Reducir margen en pantallas pequeñas */
     }
 
     .referenciaCard_Image {
-        order: 1;
+        flex: 1; /* Permitir que la imagen ocupe un espacio flexible */
         padding: 0.5em; /* Reducir padding en pantallas pequeñas */
+        order: 2; /* Colocar la imagen después de la información */
     }
 
     .referenciaCard_Info {
-        order: 2;
+        flex: 2; /* Permitir que la información ocupe más espacio */
         padding: 1em; /* Reducir padding en pantallas pequeñas */
+        order: 1; /* Colocar la información antes de la imagen */
     }
 }
+
 
 @media only screen and (max-width: 480px) {
     /* Ajuste para pantallas muy pequeñas */
