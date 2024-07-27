@@ -1,6 +1,4 @@
-/*
-    PALETA DE COLORES
-*/
+
 @property --gray-01 {
     syntax: "<color>";
     inherits: false;
@@ -33,13 +31,14 @@
     align-items: center;
     justify-content: center;
     padding: 1em;
-    background-color: var(--dark-blue);
+    background-color: var(--header-color); /* Gris azulado para el encabezado */
     color: var(--gray-03); /* Gris claro para el texto */
-    text-align: center;
+    text-align: center;  
+    font-family: 'Merriweather', serif; /* Fuente formal y elegante */
 }
 
 /*
-    ESTILO GENERAL DE TARJETAS
+    ESTILO GENERAL DE CONTENEDOR DE INFORMACION
 */
 .referenciaCard {
     display: flex;
@@ -64,6 +63,7 @@
     justify-content: center;
     padding: 1em;
 }
+
 
 .referenciaCard_Info {
     flex: 2;
@@ -131,5 +131,3 @@
         font-size: 0.9em; /* Reducir tamaño de fuente en tarjetas */
     }
 }
-
-
