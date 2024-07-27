@@ -1,6 +1,4 @@
-/*
-    PALETA DE COLORES
-*/
+
 @property --gray-01 {
     syntax: "<color>";
     inherits: false;
@@ -33,13 +31,14 @@
     align-items: center;
     justify-content: center;
     padding: 1em;
-    background-color: var(--dark-blue);
+    background-color: var(--header-color); /* Gris azulado para el encabezado */
     color: var(--gray-03); /* Gris claro para el texto */
-    text-align: center;
+    text-align: center;  
+    font-family: 'Merriweather', serif; /* Fuente formal y elegante */
 }
 
 /*
-    ESTILO GENERAL DE TARJETAS
+    ESTILO GENERAL DE CONTENEDOR DE INFORMACION
 */
 .referenciaCard {
     display: flex;
@@ -64,6 +63,7 @@
     justify-content: center;
     padding: 1em;
 }
+
 
 .referenciaCard_Info {
     flex: 2;
@@ -106,20 +106,31 @@
 @media only screen and (max-width: 768px) {
     /* Ajuste para pantallas pequeñas, como móviles */
     .referenciaCard {
-        flex-direction: column;
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
+        margin: 0.5em; /* Reducir margen en pantallas pequeñas */
+    }
+}  
+
+@media only screen and (max-width: 768px) {
+    /* Ajuste para pantallas pequeñas, como móviles */
+    .referenciaCard {
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
         margin: 0.5em; /* Reducir margen en pantallas pequeñas */
     }
 
     .referenciaCard_Image {
-        order: 1;
+        flex: 1; /* Permitir que la imagen ocupe un espacio flexible */
         padding: 0.5em; /* Reducir padding en pantallas pequeñas */
+        order: 2; /* Colocar la imagen después de la información */
     }
 
     .referenciaCard_Info {
-        order: 2;
+        flex: 2; /* Permitir que la información ocupe más espacio */
         padding: 1em; /* Reducir padding en pantallas pequeñas */
+        order: 1; /* Colocar la información antes de la imagen */
     }
 }
+
 
 @media only screen and (max-width: 480px) {
     /* Ajuste para pantallas muy pequeñas */
@@ -131,5 +142,3 @@
         font-size: 0.9em; /* Reducir tamaño de fuente en tarjetas */
     }
 }
-
-
