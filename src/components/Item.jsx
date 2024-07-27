@@ -7,6 +7,9 @@ import CustomStyles from '../styles/item.module.css'
 const Item = ({referencia}) => {
     const idReferencia = useId();
 
+
+
+    
     return (
         <>
             <div className={CustomStyles.referenciaCard} key={idReferencia}>
