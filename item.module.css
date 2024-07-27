@@ -1,0 +1,144 @@
+
+@property --gray-01 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #303030; /* Gris oscuro */
+}
+
+@property --gray-02 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #505050; /* Gris medio */
+}
+
+@property --gray-03 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #b0b0b0; /* Gris claro */
+}
+
+@property --dark-blue {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #003366; /* Azul oscuro */
+}
+
+/*
+    ENCABEZADO
+*/
+.title01 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    background-color: var(--header-color); /* Gris azulado para el encabezado */
+    color: var(--gray-03); /* Gris claro para el texto */
+    text-align: center;  
+    font-family: 'Merriweather', serif; /* Fuente formal y elegante */
+}
+
+/*
+    ESTILO GENERAL DE CONTENEDOR DE INFORMACION
+*/
+.referenciaCard {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--gray-02); /* Gris medio para tarjetas pares */
+    margin: 1em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra para profundidad */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.referenciaCard:nth-child(odd) {
+    background-color: var(--gray-01); /* Gris oscuro para tarjetas impares */
+}
+
+.referenciaCard_Image {
+    flex: 1;
+    background-color: var(--gray-03); /* Gris claro para la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+
+.referenciaCard_Info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    color: var(--gray-03); /* Gris claro para el texto */
+    text-align: justify;
+}
+
+.referenciaCard_Title {
+    margin-bottom: 0.5em;
+}
+
+.referenciaCard_Description {
+    margin-bottom: 0.5em;
+}
+
+.referenciaCard_Feature {
+    margin-bottom: 0;
+}
+
+/*
+    MEDIDAS RESPONSIVAS
+*/
+@media only screen and (max-width: 1200px) {
+    /* Ajuste para pantallas grandes, como pantallas de tablet en modo horizontal */
+    .referenciaCard {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    /* Ajuste para pantallas medianas, como tablets en modo vertical */
+    .referenciaCard {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Ajuste para pantallas pequeñas, como móviles */
+    .referenciaCard {
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
+        margin: 0.5em; /* Reducir margen en pantallas pequeñas */
+    }
+}  
+
+@media only screen and (max-width: 768px) {
+    /* Ajuste para pantallas pequeñas, como móviles */
+    .referenciaCard {
+        flex-direction: row; /* Mantener la dirección en fila para que la imagen esté a la derecha */
+        margin: 0.5em; /* Reducir margen en pantallas pequeñas */
+    }
+
+    .referenciaCard_Image {
+        flex: 1; /* Permitir que la imagen ocupe un espacio flexible */
+        padding: 0.5em; /* Reducir padding en pantallas pequeñas */
+        order: 2; /* Colocar la imagen después de la información */
+    }
+
+    .referenciaCard_Info {
+        flex: 2; /* Permitir que la información ocupe más espacio */
+        padding: 1em; /* Reducir padding en pantallas pequeñas */
+        order: 1; /* Colocar la información antes de la imagen */
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    /* Ajuste para pantallas muy pequeñas */
+    .title01 {
+        font-size: 1em; /* Reducir tamaño del texto en el encabezado */
+    }
+
+    .referenciaCard_Info {
+        font-size: 0.9em; /* Reducir tamaño de fuente en tarjetas */
+    }
+}
